@@ -1,6 +1,6 @@
-package model;
+package FEM.model;
 
-import FileOperation.DataFromFile;
+import FEM.FileOperation.DataFromFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,10 @@ public class Grid {
 
     public List<Node> getNodes() {
         return nodes;
+    }
+    public Node getNodeByID(int id){
+
+        return nodes.get(id);
     }
 
     public void setNodes(List<Node> nodes) {
@@ -76,13 +80,13 @@ public class Grid {
 
         this.nodes = tmpNodes;
         createElements(this.nodes, dataFromFile.getnH(), 5.0, 1);
-        int ps = 1;
+       /* int ps = 1;
         for (Element e : this.elements) {
             System.out.print(ps + "[ ");
             e.getId();
             System.out.print("]\n");
             ps++;
-        }
+        }*/
     }
 
     public void showNodes(DataFromFile dataFromFile) {

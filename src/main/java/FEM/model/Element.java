@@ -1,4 +1,4 @@
-package model;
+package FEM.model;
 
 public class Element {
 
@@ -7,7 +7,7 @@ public class Element {
     private Double k;
 
     public Integer[] getId() {
-        for(int i=0;i<4;i++)System.out.print(this.id[i]+ " ");
+       // for(int i=0;i<4;i++)System.out.print(this.id[i]+ " ");
         return id;
     }
 

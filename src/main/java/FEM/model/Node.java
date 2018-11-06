@@ -1,4 +1,4 @@
-package model;
+package FEM.model;
 
 
 public class Node {
