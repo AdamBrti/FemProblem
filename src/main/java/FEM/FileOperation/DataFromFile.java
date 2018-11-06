@@ -20,7 +20,7 @@ public class DataFromFile {
 
     public DataFromFile setData() {
 
-        File jsonInputFile = new File("src\\main\\resources\\plik.json");
+        File jsonInputFile = new File("src\\main\\resources\\sss.json");
         InputStream is;
         DataFromFile dataFromFile = new DataFromFile();
 
