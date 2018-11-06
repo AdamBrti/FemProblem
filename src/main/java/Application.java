@@ -1,5 +1,5 @@
 import FEM.FileOperation.DataFromFile;
-import FEM.model.BuilderMatrix;
+import FEM.model.BuilderMatrixH;
 import FEM.model.Grid;
 import FEM.model.UniversalElement;
 
@@ -15,7 +15,7 @@ public class Application {
         System.out.print("\n\n\n\n");
         UniversalElement universalElement = new UniversalElement();
         universalElement.calculate_dN_dKsi_AND_dEta();
-        BuilderMatrix builderMatrix = new BuilderMatrix();
+        BuilderMatrixH builderMatrix = new BuilderMatrixH();
         builderMatrix.buildJacobian(universalElement, grid);
         System.out.print("\n\n\n\n");
 

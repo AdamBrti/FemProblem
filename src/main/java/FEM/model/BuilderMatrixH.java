@@ -1,37 +1,33 @@
 package FEM.model;
 
-import java.util.ArrayList;
-import java.util.List;
+public class BuilderMatrixH {
 
-public class BuilderMatrix {
-
-    private double [][]jacobian;
-    private double [] detJ;
+    private double[][] jacobian;
+    private double[] detJ;
     private double[][] jacobian2D;
+    private double[][] dNdX;
+    private double[][] dNdY;
 
 
     public void buildJacobian(UniversalElement universalElement, Grid grid) {
 
         Node[] nodes = {grid.getNodeByID(0), grid.getNodeByID(6), grid.getNodeByID(7), grid.getNodeByID(1)};
-        double[][] integralPoints = new double[4][4];
         double J_1_1[] = new double[4];
         double J_1_2[] = new double[4];
         double J_2_1[] = new double[4];
         double J_2_2[] = new double[4];
         double fullofJacobian[][] = new double[4][4];
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
 
+
+            for (int j = 0; j < 4; j++) {
 
                 J_1_1[i] += universalElement.getdNdKsiValuesByID(i, j) * nodes[j].getX();
                 J_1_2[i] += universalElement.getdNdKsiValuesByID(i, j) * nodes[j].getY();
                 J_2_1[i] += universalElement.getdNdEtaValuesByID(i, j) * nodes[j].getX();
                 J_2_2[i] += universalElement.getdNdEtaValuesByID(i, j) * nodes[j].getY();
 
-
             }
-            // System.out.println("i: " + i + " V: " + J_1_1[i] + "       " + J_1_2[i] + "     " + "       " + J_2_1[i] + "       " + J_2_2[i]);
-
         }
         fullofJacobian[0] = J_1_1;
         fullofJacobian[1] = J_1_2;
@@ -45,11 +41,11 @@ public class BuilderMatrix {
             }
             System.out.println();
         }
-        //wyznacznik detJ
         this.jacobian = fullofJacobian;
         buildDetJ();
 
-
+        calculate_dN_dX(universalElement);
+        calculate_dN_dY(universalElement);
     }
 
     public void buildDetJ() {
@@ -76,12 +72,10 @@ public class BuilderMatrix {
         double jacobian2D[][] = new double[4][4];
         for (int i = 0; i < 4; i++) {
 
-
             J_1_1_1[i] = jacobian[3][i] / detJ[i];
             J_1_1_2[i] = jacobian[2][i] / detJ[i];
             J_1_2_1[i] = jacobian[1][i] / detJ[i];
             J_1_2_2[i] = jacobian[0][i] / detJ[i];
-           // System.out.println(J_1_1_1[i] + " " + J_1_1_2[i] + " " + J_1_2_1[i] + " " + J_1_2_2[i] + " ");
 
         }
         jacobian2D[0] = J_1_1_1;
@@ -91,11 +85,48 @@ public class BuilderMatrix {
 
         this.jacobian2D = jacobian2D;
 
-        for (int i = 0; i <4 ; i++) {
+        for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                System.out.print(jacobian2D[i][j]+" ");
+                System.out.print(jacobian2D[i][j] + " ");
             }
             System.out.println();
         }
+
+
+    }
+
+
+    public void calculate_dN_dX(UniversalElement universalElement) {
+        System.out.println();
+        double[][] tmpdNdX = new double[4][4];
+        for (int i = 0; i < 4; i++) {
+
+            for (int j = 0; j < 4; j++) {
+
+
+                tmpdNdX[i][j] = jacobian2D[0][0] * universalElement.getdNdKsiValuesByID(i, j) + jacobian2D[1][1] * universalElement.getdNdEtaValuesByID(i, j);
+
+                System.out.print(tmpdNdX[i][j] + " ");
+            }
+            System.out.println();
+        }
+    this.dNdX=tmpdNdX;
+    }
+
+    public void calculate_dN_dY(UniversalElement universalElement) {
+        System.out.println();
+        double[][] tmpdNdY = new double[4][4];
+        for (int i = 0; i < 4; i++) {
+
+            for (int j = 0; j < 4; j++) {
+
+
+                tmpdNdY[i][j] = jacobian2D[2][2] * universalElement.getdNdKsiValuesByID(i, j) + jacobian2D[3][3] * universalElement.getdNdEtaValuesByID(i, j);
+
+                System.out.print(tmpdNdY[i][j] + " ");
+            }
+            System.out.println();
+        }
+        this.dNdY=tmpdNdY;
     }
 }
