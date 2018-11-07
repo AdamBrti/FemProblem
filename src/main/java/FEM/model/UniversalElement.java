@@ -4,6 +4,7 @@ import static java.lang.StrictMath.sqrt;
 
 public class UniversalElement {
 
+    //TODO - ksi wartosci wstawione na sztywno, eta analogicznie, poprawic wartosci integralPointow
     private Point[] integralPoints = {new Point((-1 / Math.sqrt(3)), (-1 / Math.sqrt(3))), new Point((1 / Math.sqrt(3)), (-1 / Math.sqrt(3))), new Point((1 / Math.sqrt(3)), (1 / Math.sqrt(3))), new Point((-1 / Math.sqrt(3)), (1 / Math.sqrt(3)))};
     private double ksiValueTable[] = {-0.5773502692, -0.5773502692, 0.5773502692, 0.5773502692};
     private double etaValueTable[] = {-0.5773502692, 0.5773502692, 0.5773502692, -0.5773502692};

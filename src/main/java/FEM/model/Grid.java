@@ -79,7 +79,7 @@ public class Grid {
         }
 
         this.nodes = tmpNodes;
-        createElements(this.nodes, dataFromFile.getnH(), 5.0, 1);
+        createElements(this.nodes, dataFromFile.getnH(), 30.0, 1);
        /* int ps = 1;
         for (Element e : this.elements) {
             System.out.print(ps + "[ ");

@@ -13,6 +13,8 @@ public class DataFromFile {
     private Integer l;
     private Integer nH;
     private Integer nL;
+
+    // TODO k powinno byc prawdopodobnie jako double
     private Integer k;
     private Integer t;
 
