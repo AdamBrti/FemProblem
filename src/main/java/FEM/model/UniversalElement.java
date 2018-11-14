@@ -4,15 +4,26 @@ import static java.lang.StrictMath.sqrt;
 
 public class UniversalElement {
 
-    //TODO - ksi wartosci wstawione na sztywno, eta analogicznie, poprawic wartosci integralPointow
-    private Point[] integralPoints = {new Point((-1 / Math.sqrt(3)), (-1 / Math.sqrt(3))), new Point((1 / Math.sqrt(3)), (-1 / Math.sqrt(3))), new Point((1 / Math.sqrt(3)), (1 / Math.sqrt(3))), new Point((-1 / Math.sqrt(3)), (1 / Math.sqrt(3)))};
-    private double ksiValueTable[] = {-0.5773502692, -0.5773502692, 0.5773502692, 0.5773502692};
-    private double etaValueTable[] = {-0.5773502692, 0.5773502692, 0.5773502692, -0.5773502692};
-    private double dNdKsiValues[][]=new double[4][4];
-    private double dNdEtaValues[][]=new double[4][4];
 
-    private double elementsN[];
+    private Point[] integralPoints = new Point[4];
+    private double ksiValueTable[] = new double[4];
+    private double etaValueTable[] = new double[4];
+    private double dNdKsiValues[][] = new double[4][4];
+    private double dNdEtaValues[][] = new double[4][4];
 
+    public UniversalElement() {
+
+        double tmp = 1 / sqrt(3);
+        integralPoints[0] = new Point(-tmp, -tmp);
+        integralPoints[1] = new Point(tmp, -tmp);
+        integralPoints[2] = new Point(tmp, tmp);
+        integralPoints[3] = new Point(-tmp, tmp);
+        for (int i = 0; i < 4; i++) {
+            ksiValueTable[i] = integralPoints[i].getX();
+            etaValueTable[i] = integralPoints[i].getY();
+        }
+
+    }
 
     public void calculate_dN_dKsi_AND_dEta() {
 
@@ -22,42 +33,37 @@ public class UniversalElement {
         for (int i = 0; i < 4; i++) {
 
             for (int j = 0; j < 4; j++) {
-                switch (j) {
-                    case 0:
-                        tmp[i][j] = -0.25 * (1 - ksiValueTable[i]);
-                        tmp2[i][j] = -0.25 * (1 - etaValueTable[i]);
-                        break;
-                    case 1:
-                        tmp[i][j] = 0.25 * (1 - ksiValueTable[i]);
-                        tmp2[i][j] = -0.25 * (1 + etaValueTable[i]);
-                        break;
-                    case 2:
-                        tmp[i][j] = 0.25 * (1 + ksiValueTable[i]);
-                        tmp2[i][j] = 0.25 * (1 + etaValueTable[i]);
-                        break;
-                    case 3:
-                        tmp[i][j] = -0.25 * (1 + ksiValueTable[i]);
-                        tmp2[i][j] = 0.25 * (1 - etaValueTable[i]);
-                        break;
+
+                if (i == 0) {
+                    tmp[j][i] = -0.25 * (1 - etaValueTable[j]);
+                    tmp2[j][i] = -0.25 * (1 - ksiValueTable[j]);
                 }
-
+                if (i == 1) {
+                    tmp[j][i] = 0.25 * (1 - etaValueTable[j]);
+                    tmp2[j][i] = -0.25 * (1 + ksiValueTable[j]);
+                }
+                if (i == 2) {
+                    tmp[j][i] = 0.25 * (1 + etaValueTable[j]);
+                    tmp2[j][i] = 0.25 * (1 + ksiValueTable[j]);
+                }
+                if (i == 3) {
+                    tmp[j][i] = -0.25 * (1 + etaValueTable[j]);
+                    tmp2[j][i] = 0.25 * (1 - ksiValueTable[j]);
+                }
             }
-            dNdKsiValues=tmp;
-            dNdEtaValues=tmp2;
+            this.dNdKsiValues = tmp;
+            this.dNdEtaValues = tmp2;
         }
+        int l = 0;
 
-        /*for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
 
             for (int j = 0; j < 4; j++) {
-                System.out.print(tmp2[i][j] + "  \n");
+                System.out.format("%.7f ", tmp2[i][j]);
             }
-            System.out.print("\n\n\n");
-        }*/
-
-
-    }
-
-    public UniversalElement() {
+            System.out.println();
+        }
+        System.out.println();
 
     }
 
@@ -65,35 +71,12 @@ public class UniversalElement {
         return ksiValueTable;
     }
 
-    public void setKsiValueTable(double[] ksiValueTable) {
-        this.ksiValueTable = ksiValueTable;
-    }
-
     public double[] getEtaValueTable() {
         return etaValueTable;
     }
 
-    public void setEtaValueTable(double[] etaValueTable) {
-        this.etaValueTable = etaValueTable;
-    }
-
-    public double[][] getdNdKsiValues() {
-        return dNdKsiValues;
-    }
     public double getdNdKsiValuesByID(int i, int j) {
         return this.dNdKsiValues[i][j];
-    }
-
-    public void setdNdKsiValues(double[][] dNdKsiValues) {
-        this.dNdKsiValues = dNdKsiValues;
-    }
-
-    public double[][] getdNdEtaValues() {
-        return dNdEtaValues;
-    }
-
-    public void setdNdEtaValues(double[][] dNdEtaValues) {
-        this.dNdEtaValues = dNdEtaValues;
     }
 
     public double getdNdEtaValuesByID(int i, int j) {

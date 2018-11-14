@@ -1,28 +1,27 @@
 package FEM.FileOperation;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class DataFromFile {
     private Integer h;
     private Integer l;
     private Integer nH;
     private Integer nL;
-
+    private double cos;
     // TODO k powinno byc prawdopodobnie jako double
     private Integer k;
     private Integer t;
 
 
-
     public DataFromFile setData() {
 
-        File jsonInputFile = new File("src\\main\\resources\\sss.json");
+        File jsonInputFile = new File("src\\main\\resources\\plik.json");
         InputStream is;
         DataFromFile dataFromFile = new DataFromFile();
 
@@ -32,6 +31,7 @@ public class DataFromFile {
             JsonReader reader = Json.createReader(is);
 
             JsonObject empObj = reader.readObject();
+
             reader.close();
 
 
