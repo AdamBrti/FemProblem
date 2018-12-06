@@ -13,10 +13,7 @@ public class Grid {
     public List<Node> getNodes() {
         return nodes;
     }
-    public Node getNodeByID(int id){
 
-        return nodes.get(id);
-    }
 
     public void setNodes(List<Node> nodes) {
         this.nodes = nodes;
@@ -37,7 +34,7 @@ public class Grid {
         }
     }
 
-    public void createElements(List<Node> nodes, Integer nH, Double k, int up) {
+    public void createElements(List<Node> nodes, Integer nH, double k, int up) {
 
         Element element = new Element();
         int down;
@@ -59,6 +56,7 @@ public class Grid {
 
     }
 
+
     public void generateNodes(DataFromFile dataFromFile) {
         List<Node> tmpNodes = new ArrayList<>();
         Integer deltaX = dataFromFile.getL() / (dataFromFile.getnL() - 1);
@@ -74,40 +72,85 @@ public class Grid {
                 tmpNode.setT(dataFromFile.getT());
                 tmpNodes.add(tmpNode);
 
+
             }
 
         }
 
         this.nodes = tmpNodes;
-        createElements(this.nodes, dataFromFile.getnH(), 30.0, 1);
-       /* int ps = 1;
-        for (Element e : this.elements) {
-            System.out.print(ps + "[ ");
-            e.getId();
-            System.out.print("]\n");
-            ps++;
-        }*/
+        createElements(this.nodes, dataFromFile.getnH(), dataFromFile.getConductivity(), 1);
+    }
+
+    public void generateNodes2(DataFromFile dataFromFile) {
+        List<Node> tmpNodes = new ArrayList<>();
+        double deltaX = dataFromFile.get_B() / (dataFromFile.getN_B() - 1);
+        double deltaY = dataFromFile.get_H() / (dataFromFile.getN_H() - 1);
+
+        int counterOfElements = 0;
+        int p = 0;
+        for (double i = 0; i <= dataFromFile.get_B(); i = i + deltaX) {
+
+            int q = 0;
+            for (double j = 0; j <= dataFromFile.get_H(); j = j + deltaY) {
+
+                Node tmpNode = new Node();
+                tmpNode.setX(i);
+                tmpNode.setY(j);
+                tmpNode.setT(dataFromFile.getTemperatur());
+                tmpNodes.add(tmpNode);
+                if (p == 0 || p == dataFromFile.getN_B() - 1 || q == 0 || q == dataFromFile.getN_H() - 1) {
+                    tmpNode.setBoarderContition(true);
+                }
+                q++;
+            }
+            counterOfElements++;
+            p++;
+        }
+
+        this.nodes = tmpNodes;
+        createElements(this.nodes, dataFromFile.getN_H(), dataFromFile.getConductivity(), 1);
     }
 
     public void showNodes(DataFromFile dataFromFile) {
         int i = 0;
         int nodeNumber = 1;
         int line = 1;
+        int iter = 1;
+        for (Node n : this.nodes) {
+            System.out.println(iter + " " + n.isBoarderContition());
+            iter++;
+        }
+
         for (Node n : this.nodes) {
 
-            if (i < dataFromFile.getnH()) {
-                System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
+            if (i < dataFromFile.getN_H()) {
+                //System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
+                System.out.print(nodeNumber);
+                System.out.format("( %.3f ", n.getX());
+                System.out.print(", ");
+                System.out.format("%.3f ", n.getY());
+                System.out.print(")   ");
                 nodeNumber++;
                 i++;
             } else {
                 System.out.print("\n\n\n");
                 line++;
-                System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
+                // System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
+                System.out.print(nodeNumber);
+                System.out.format("( %.3f ", n.getX());
+                System.out.print(", ");
+                System.out.format("%.3f ", n.getY());
+                System.out.print(")   ");
                 nodeNumber++;
                 i = 1;
             }
 
         }
+    }
+
+    public Node getNodeByID(int id) {
+
+        return nodes.get(id);
     }
 
 

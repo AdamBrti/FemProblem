@@ -3,28 +3,30 @@ package FEM.model;
 
 public class Node {
 
-    private Integer x;
-    private Integer y;
+    private double x;
+    private double y;
     private double t;
+    private boolean boarderContition=false;
 
 
-    public Integer getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public Integer getY() {
+    public double getY() {
         return y;
     }
 
-    public void setY(Integer y) {
+    public void setY(double y) {
         this.y = y;
     }
 
-    public Double getT() {
+
+    public double getT() {
         return t;
     }
 
@@ -32,7 +34,13 @@ public class Node {
         this.t = t;
     }
 
-    public void setT(Integer t) {
-        this.t = t;
+    public boolean isBoarderContition() {
+        return boarderContition;
     }
+
+    public void setBoarderContition(boolean boarderContition) {
+        this.boarderContition = boarderContition;
+    }
+
+
 }

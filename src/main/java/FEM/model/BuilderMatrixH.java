@@ -1,11 +1,13 @@
 package FEM.model;
 
 
+import FEM.FileOperation.DataFromFile;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BuilderMatrixH {
-
+private DataFromFile dataFromFile;
     private static double c = 700;
     private static double ro = 7800;
     private double[][] jacobian;
@@ -26,11 +28,17 @@ public class BuilderMatrixH {
     private double[][] matrixC;
     List<double[][]> listOfPointIntegrals;
 
+    public BuilderMatrixH(DataFromFile dataFromFile){
+        this.dataFromFile=dataFromFile;
+    }
 
-    public void buildJacobian(UniversalElement universalElement, Grid grid) {
+    public BuilderMatrixH(){}
+
+
+    public void buildJacobian(UniversalElement universalElement, Grid grid, int number) {
 
         // TODO - poprawic wybieranie nodebyID na jakies zmienne - poki co na sztywno
-        Node[] nodes = {grid.getNodeByID(0), grid.getNodeByID(6), grid.getNodeByID(7), grid.getNodeByID(1)};
+        Node[] nodes = {grid.getNodeByID(number), grid.getNodeByID(number + dataFromFile.getN_H()), grid.getNodeByID(number + dataFromFile.getN_H()+1), grid.getNodeByID(number + 1)};
         double J_1_1[] = new double[4];
         double J_1_2[] = new double[4];
         double J_2_1[] = new double[4];
@@ -53,7 +61,7 @@ public class BuilderMatrixH {
         fullofJacobian[3] = J_2_2;
         this.jacobian = fullofJacobian;
 
-        show2D(jacobian);
+        //show2D(jacobian);
         buildDetJ();
 
         calculate_dN_dX(universalElement);
@@ -67,8 +75,8 @@ public class BuilderMatrixH {
             detJ[i] = jacobian[0][i] * jacobian[3][i] - jacobian[1][i] * jacobian[2][i];
         }
         this.detJ = detJ;
-        System.out.println("DetJ");
-        show1D(detJ);
+        //System.out.println("DetJ");
+       // show1D(detJ);
         buildJ_L_L();
 
     }
@@ -82,7 +90,7 @@ public class BuilderMatrixH {
 
         double jacobian2D[][] = new double[4][4];
         for (int i = 0; i < 4; i++) {
-            //TODO sprawdzic poprawnosc iteracji po jacobianie - excel ma zamienione dwie wartosci
+
             J_1_1_1[i] = jacobian[3][i] / detJ[i];
             J_1_2_1[i] = jacobian[2][i] / detJ[i];
             J_1_1_2[i] = jacobian[1][i] / detJ[i];
@@ -95,12 +103,12 @@ public class BuilderMatrixH {
         jacobian2D[3] = J_1_2_2;
 
         this.jacobian2D = jacobian2D;
-        System.out.println("Jacobian 2D");
-        show2D(jacobian2D);
+       // System.out.println("Jacobian 2D");
+        //show2D(jacobian2D);
     }
 
     public void calculate_dN_dX(UniversalElement universalElement) {
-        System.out.println();
+        //System.out.println();
         double[][] tmpdNdX = new double[4][4];
         for (int i = 0; i < 4; i++) {
 
@@ -128,44 +136,29 @@ public class BuilderMatrixH {
 
         }
         this.dNdY = tmpdNdY;
-        show2D(tmpdNdY);
+        //  show2D(tmpdNdY);
         calculate_dNdX2DMatrix_and_dNdY2DMatrix_T();
     }
 
     public void calculate_dNdX2DMatrix_and_dNdY2DMatrix_T() {
-        //TODO sprawdz czy wartosci są na pewno dobre
         dNdX2DMatrix = new ArrayList<>();
         dNdY2DMatrix = new ArrayList<>();
         double tmpFor2X[];
         double tmpFor2Y[];
-
         for (int p = 0; p < 4; p++) {
             tmpFor2X = dNdX[p];
             tmpFor2Y = dNdY[p];
             double tmpdNdX2[][] = new double[4][4];
             double tmpdNdY2[][] = new double[4][4];
             for (int i = 0; i < 4; i++) {
-
                 for (int j = 0; j < 4; j++) {
-
                     tmpdNdX2[i][j] = tmpFor2X[i] * tmpFor2X[j];
                     tmpdNdY2[i][j] = tmpFor2Y[i] * tmpFor2Y[j];
-
                 }
-
             }
             dNdX2DMatrix.add(tmpdNdX2);
             dNdY2DMatrix.add(tmpdNdY2);
         }
-
-
-        /*
-        for (double[][] tablica : dNdX2DMatrix) {
-            show2D(tablica);
-            System.out.println();
-            System.out.println();
-        }*/
-
         calculate_dNdX2DMatrix__dNdY2DMatrix_T_AND_detJ();
     }
 
@@ -173,7 +166,6 @@ public class BuilderMatrixH {
     public void calculate_dNdX2DMatrix__dNdY2DMatrix_T_AND_detJ() {
         double[][] dNdX2D;
         double[][] dNdY2D;
-
         listOf_dNdX2_and_DetJ = new ArrayList<>();
         listOf_dNdY2_and_DetJ = new ArrayList<>();
         for (int p = 0; p < 4; p++) {
@@ -195,21 +187,16 @@ public class BuilderMatrixH {
 
     public void calculate_K_and_Matrixs() {
         partsOf_H = new ArrayList<>();
-
         for (int p = 0; p < 4; p++) {
             double[][] partMatrix = new double[4][4];
             double[][] tmpX2D = listOf_dNdX2_and_DetJ.get(p);
             double[][] tmpY2D = listOf_dNdY2_and_DetJ.get(p);
-
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-                    partMatrix[i][j] = 30.0 * (tmpX2D[i][j] + tmpY2D[i][j]);
-                    //   System.out.print(partMatrix[i][j]+"   ");
+                    partMatrix[i][j] = dataFromFile.getConductivity() * (tmpX2D[i][j] + tmpY2D[i][j]);
                 }
-                // System.out.println();
             }
             partsOf_H.add(partMatrix);
-            // System.out.println();
         }
         calculate_Matrix_H();
     }
@@ -217,20 +204,18 @@ public class BuilderMatrixH {
     public void calculate_Matrix_H() {
         matrixH = new double[4][4];
         for (double[][] partmatrix : partsOf_H) {
-
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     matrixH[i][j] += partmatrix[i][j];
                 }
             }
         }
-
-        show2D(matrixH);
+      //  show2D(matrixH);
     }
 
     //--------------------------MATRIX C
     public void buildMatrixC(UniversalElement universalElement) {
-       // Node[] nodes = {grid.getNodeByID(0), grid.getNodeByID(6), grid.getNodeByID(7), grid.getNodeByID(1)};
+        // Node[] nodes = {grid.getNodeByID(0), grid.getNodeByID(6), grid.getNodeByID(7), grid.getNodeByID(1)};
         double[] ksiValues = universalElement.getKsiValueTable();
         double[] etaValues = universalElement.getEtaValueTable();
         double tmpFunkcjaKsztaltu[][] = new double[4][4];
@@ -254,6 +239,10 @@ public class BuilderMatrixH {
         calculateIntegralPoints();
         calculateMatrixC();
 
+
+        //System.out.println("-=-=-=-=--=-=-=-=-=-MATRIX C-=-=-=-=-=-=-=-=-=-=-");
+        //show2D(matrixC);
+
     }
 
     public void calculateIntegralPoints() {
@@ -261,12 +250,12 @@ public class BuilderMatrixH {
 
         for (int p = 0; p < 4; p++) {
             double integralPoionts[][] = new double[4][4];
-            double[] tmpFunKsztaltu=fukcjaKsztaltu[p];
+            double[] tmpFunKsztaltu = fukcjaKsztaltu[p];
 
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
 
-                    integralPoionts[i][j]=c*ro*tmpFunKsztaltu[i]*tmpFunKsztaltu[j]*detJ[p];
+                    integralPoionts[i][j] = dataFromFile.getSpecHeat() * dataFromFile.getDensity() * tmpFunKsztaltu[i] * tmpFunKsztaltu[j] * detJ[p];
 
                 }
             }
@@ -277,20 +266,15 @@ public class BuilderMatrixH {
 
     }
 
-    public void calculateMatrixC(){
-
+    public void calculateMatrixC() {
         matrixC = new double[4][4];
-        for (double[][] partmatrix : listOfPointIntegrals) {
-
+        for (double[][] partMatrix : listOfPointIntegrals) {
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-                    matrixC[i][j] += partmatrix[i][j];
+                    matrixC[i][j] += partMatrix[i][j];
                 }
             }
         }
-
-        show2D(matrixC);
-
     }
 
     public void show1D(double[] tab) {
