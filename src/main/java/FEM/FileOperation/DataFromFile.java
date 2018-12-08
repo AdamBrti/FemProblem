@@ -38,7 +38,7 @@ public class DataFromFile {
         alfa = 300;
         _H = 0.100;
         _B = 0.100;
-        N_H = 6;
+        N_H = 4;
         N_B = 4;
         specHeat = 700;
         conductivity = 25;

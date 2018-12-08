@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BuilderMatrixH {
-private DataFromFile dataFromFile;
+    private DataFromFile dataFromFile;
     private static double c = 700;
     private static double ro = 7800;
     private double[][] jacobian;

@@ -25,7 +25,7 @@ public class AreaGenerator {
                     System.out.print(areaStatus[l] + " ");
                 }
 
-                System.out.println("");
+                System.out.println("\n");
             }
         }
     }
