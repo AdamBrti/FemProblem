@@ -1,27 +1,42 @@
-package FEM.model;
+package FEM.Matrix;
 
 import FEM.FileOperation.DataFromFile;
+import FEM.model.UniversalElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MatrixC {
-    private DataFromFile dataFromFile;
-                         // macierz zawierajaca dNi/dy
 
-    private List<double[][]> dNdX2DMatrix;                  // lista zawierajaca  ?4? macierze {dN/dx}{dN/dx}T
-    private List<double[][]> dNdY2DMatrix;                  // lista zawierajaca  ?4? macierze {dN/dy}{dN/dy}T
-    private List<double[][]> listOf_dNdX2_and_DetJ;         //lista 4 macierzy {dN/dx}{dN/dx}T*DetJ
-    private List<double[][]> listOf_dNdY2_and_DetJ;         //lista 4 macierzy {dN/dy}{dN/dy}T*DetJ
-    private List<double[][]> partsOf_H;                     //lista 4 macierzy "K*(     {dN/dx}{dN/dx}T  +  {dN/dy}{dN/dy}T)*DetJ
-    private double[][] matrixH;
-    //Funkcja ksztaltu
+    private DataFromFile dataFromFile;
+    private double[][] jacobian;
+    private double[][] jacobian2D;
+    private double[] detJ;
+
     private double[][] fukcjaKsztaltu;
-    private double[][] matrixC;
-    List<double[][]> listOfPointIntegrals;
+    public double[][] matrixC;
+    private List<double[][]> listOfPointIntegrals;
+
+    public MatrixC() {
+    }
+
+    public MatrixC(DataFromFile dataFromFile, UniversalElement universalElement, MatrixH matrixH) {
+        this.dataFromFile = dataFromFile;
+        this.jacobian = matrixH.getJacobian();
+        this.jacobian2D = matrixH.getJacobian2D();
+        this.detJ = matrixH.getDetJ();
+    }
+
 
     public void buildMatrixC(UniversalElement universalElement) {
 
+        calculateFunkcjaKsztaltu(universalElement);
+        calculateIntegralPoints();
+        calculateMatrixC();
+        //show2D(matrixC);
+
+    }
+    public void calculateFunkcjaKsztaltu(UniversalElement universalElement) {
         double[] ksiValues = universalElement.getKsiValueTable();
         double[] etaValues = universalElement.getEtaValueTable();
         double tmpFunkcjaKsztaltu[][] = new double[4][4];
@@ -42,13 +57,6 @@ public class MatrixC {
             }
         }
         this.fukcjaKsztaltu = tmpFunkcjaKsztaltu;
-        calculateIntegralPoints();
-        calculateMatrixC();
-
-
-        System.out.println("-=-=-=-=--=-=-=-=-=-MATRIX C-=-=-=-=-=-=-=-=-=-=-");
-        show2D(matrixC);
-
     }
 
     public void calculateIntegralPoints() {
@@ -59,13 +67,10 @@ public class MatrixC {
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
                     integralPoionts[i][j] = dataFromFile.getSpecHeat() * dataFromFile.getDensity() * tmpFunKsztaltu[i] * tmpFunKsztaltu[j] * detJ[p];
-
                 }
             }
             listOfPointIntegrals.add(integralPoionts);
         }
-
-
     }
 
     public void calculateMatrixC() {
@@ -90,51 +95,4 @@ public class MatrixC {
     }
 
 
-    public List<double[][]> getdNdX2DMatrix() {
-        return dNdX2DMatrix;
-    }
-
-    public void setdNdX2DMatrix(List<double[][]> dNdX2DMatrix) {
-        this.dNdX2DMatrix = dNdX2DMatrix;
-    }
-
-    public List<double[][]> getdNdY2DMatrix() {
-        return dNdY2DMatrix;
-    }
-
-    public void setdNdY2DMatrix(List<double[][]> dNdY2DMatrix) {
-        this.dNdY2DMatrix = dNdY2DMatrix;
-    }
-
-    public List<double[][]> getListOf_dNdX2_and_DetJ() {
-        return listOf_dNdX2_and_DetJ;
-    }
-
-    public void setListOf_dNdX2_and_DetJ(List<double[][]> listOf_dNdX2_and_DetJ) {
-        this.listOf_dNdX2_and_DetJ = listOf_dNdX2_and_DetJ;
-    }
-
-    public List<double[][]> getListOf_dNdY2_and_DetJ() {
-        return listOf_dNdY2_and_DetJ;
-    }
-
-    public void setListOf_dNdY2_and_DetJ(List<double[][]> listOf_dNdY2_and_DetJ) {
-        this.listOf_dNdY2_and_DetJ = listOf_dNdY2_and_DetJ;
-    }
-
-    public List<double[][]> getPartsOf_H() {
-        return partsOf_H;
-    }
-
-    public void setPartsOf_H(List<double[][]> partsOf_H) {
-        this.partsOf_H = partsOf_H;
-    }
-
-    public double[][] getMatrixH() {
-        return matrixH;
-    }
-
-    public void setMatrixH(double[][] matrixH) {
-        this.matrixH = matrixH;
-    }
 }

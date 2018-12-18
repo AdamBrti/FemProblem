@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" line="99" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" line="73" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711a4822-13f8-48c0-b95d-f80c28739fb4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/Agregation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/AreaGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/VectorP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FEM/model/IntegralPointP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/annotation-processors.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/FileOperation/DataFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/FileOperation/DataFromFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/AreaGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/model/AreaGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/AreaGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/BuilderMatrixH.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/model/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/MatrixHBC$IntegralPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/MatrixHBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/model/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/UniversalElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/model/UniversalElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/model/VectorP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/MatrixHBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/VectorP.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -74,48 +99,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BuilderMatrixH.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java">
+      <file leaf-file-name="VectorP.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/VectorP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="226">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataFromFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1689">
+              <caret line="168" selection-start-line="168" selection-end-line="168" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#show1D#0;class#BuilderMatrixH#0" />
-                <element signature="method#show2D#0;class#BuilderMatrixH#0" />
+                <element signature="e#3839#3840#0" expanded="true" />
+                <element signature="e#3942#3943#0" expanded="true" />
+                <element signature="e#3969#3970#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatrixC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java">
+      <file leaf-file-name="MatrixHBC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+            <state relative-caret-position="301">
+              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getIteratorForKsi#0;class#MatrixHBC#0" />
+                <element signature="method#getIteratorForEta#0;class#MatrixHBC#0" />
+                <element signature="method#pitagoras#0;class#MatrixHBC#0" />
+                <element signature="e#5969#5970#0" expanded="true" />
+                <element signature="e#5994#5995#0" expanded="true" />
+                <element signature="method#show2D#0;class#MatrixHBC#0" />
+                <element signature="e#6392#6393#0" expanded="true" />
+                <element signature="e#6424#6425#0" expanded="true" />
+                <element signature="e#6475#6476#0" expanded="true" />
+                <element signature="e#6512#6513#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="22" column="98" lean-forward="true" selection-start-line="22" selection-start-column="98" selection-end-line="22" selection-end-column="98" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#MatrixC#0;class#MatrixC#0" />
+                <element signature="method#calculateIntegralPoints#0;class#MatrixC#0" />
                 <element signature="method#show2D#0;class#MatrixC#0" />
-                <element signature="e#4162#4163#0" expanded="true" />
-                <element signature="e#4197#4198#0" expanded="true" />
-                <element signature="e#4263#4264#0" expanded="true" />
-                <element signature="e#4311#4312#0" expanded="true" />
-                <element signature="e#4360#4361#0" expanded="true" />
-                <element signature="e#4395#4396#0" expanded="true" />
-                <element signature="e#4461#4462#0" expanded="true" />
-                <element signature="e#4509#4510#0" expanded="true" />
-                <element signature="e#4567#4568#0" expanded="true" />
-                <element signature="e#4611#4612#0" expanded="true" />
-                <element signature="e#4819#4820#0" expanded="true" />
-                <element signature="e#4863#4864#0" expanded="true" />
-                <element signature="e#5059#5060#0" expanded="true" />
-                <element signature="e#5091#5092#0" expanded="true" />
-                <element signature="e#5151#5152#0" expanded="true" />
-                <element signature="e#5193#5194#0" expanded="true" />
-                <element signature="e#5231#5232#0" expanded="true" />
-                <element signature="e#5261#5262#0" expanded="true" />
-                <element signature="e#5311#5312#0" expanded="true" />
-                <element signature="e#5349#5350#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +186,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>detJ</find>
+      <find>listOfPartsSum</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -311,7 +374,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4627645407913" />
+        <entry key="$PROJECT_DIR$" value="4628330592610" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="2160265290" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2083459160" />
@@ -443,19 +506,30 @@
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/Jacobian.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrix.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/Point.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plik.json" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/VectorP.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/Element.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/ConstElements.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/MatrixHBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/VectorP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/podstawy/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/BuilderMatrixH.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/AreaGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/IntegralPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/Agregation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/IntegralPointP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/VectorP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
       </list>
     </option>
   </component>
@@ -475,7 +549,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -487,8 +561,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -538,6 +613,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="FEM" type="462c0819:PsiDirectoryNode" />
+              <item name="Matrix" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="femProblem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="femProblem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="FEM" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -551,13 +635,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Haftpflichkasse/algo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../P MES/MesProject" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -711,7 +794,10 @@
       <workItem from="1544098247184" duration="262000" />
       <workItem from="1544098544255" duration="61000" />
       <workItem from="1544140101725" duration="1776000" />
-      <workItem from="1544269527274" duration="1866000" />
+      <workItem from="1544269527274" duration="23796000" />
+      <workItem from="1544727750940" duration="10899000" />
+      <workItem from="1544784275443" duration="1659000" />
+      <workItem from="1545150891144" duration="10148000" />
     </task>
     <task id="LOCAL-00001" summary="2nd etap +">
       <created>1541541890026</created>
@@ -745,7 +831,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125456000" />
+    <option name="totallyTimeSpent" value="170092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,15 +851,15 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5015129" side_tool="true" weight="0.30363035" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50226927" side_tool="true" weight="0.24257426" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.070957094" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26237625" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.11386139" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" weight="0.32838285" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24810892" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="10" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.18532526" />
@@ -783,7 +869,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848714" visible="true" weight="0.24257426" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.49669966" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32838285" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -799,34 +885,35 @@
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Image Layers" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.53433836" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1369637" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" weight="0.32838285" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50226927" side_tool="true" weight="0.24257426" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32838285" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.070957094" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.32980332" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.59811616" />
-      <window_info anchor="right" id="SciView" order="9" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="7" weight="0.32980332" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.18532526" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
+      <window_info anchor="right" id="SciView" order="11" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="10" weight="0.32980332" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="10" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44554454" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" visible="true" weight="0.7326733" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,61 +934,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>19</line>
+          <line>120</line>
           <properties />
-          <option name="timeStamp" value="170" />
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="229" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="171" />
+      <option name="time" value="230" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="GradleRunConfiguration">
-        <watch expression="listOfPartsSum.get(1)" />
-        <watch expression="listOfPartsSum.get(1)" />
-        <watch expression="listOfPartsSum.get(1)" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#show1D#0;class#BuilderMatrixH#0" />
-            <element signature="method#show2D#0;class#BuilderMatrixH#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Element.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plik.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3839#3840#0" expanded="true" />
+            <element signature="e#3942#3943#0" expanded="true" />
+            <element signature="e#3969#3970#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1084,25 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/FEM">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>FEM</OriginalElement>
-          <nodes>
-            <node x="" y="">FEM.model</node>
-            <node x="" y="">FEM.FileOperation</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="75.0" y="52.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/NullPointerException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -1145,30 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#2515#2516#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
-            <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2629#2630#0" expanded="true" />
-            <element signature="e#2684#2685#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2873#2874#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/plik.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1186,123 +1199,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Element.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/ConstElements.java" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/FileOperation;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/Matrix;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/model;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/podstawy;">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main/java/FEM/FileOperation;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/Matrix;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/model;C:/Users/user/IdeaProjects/Semestr_5/femProblem/src/main/java/FEM/podstawy;</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="493.0" y="264.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/FEM">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>FEM</OriginalElement>
+          <nodes>
+            <node x="" y="">FEM.model</node>
+            <node x="" y="">FEM.Matrix</node>
+            <node x="" y="">FEM.FileOperation</node>
+            <node x="" y="">FEM.podstawy</node>
+            <node x="" y="">FEM.Interfaces</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="135.0" y="126.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/Agregation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/AreaGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#218#219#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
-          <folding>
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/IntegralPointP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/VectorP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="226">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/MatrixHBC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Element.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getIteratorForKsi#0;class#MatrixHBC#0" />
             <element signature="method#getIteratorForEta#0;class#MatrixHBC#0" />
             <element signature="method#pitagoras#0;class#MatrixHBC#0" />
-            <element signature="method#calcWarunkiBrzegowe_1D#0;class#MatrixHBC#0" />
-            <element signature="class#IntegralPoint#0;class#MatrixHBC#0" />
+            <element signature="e#5969#5970#0" expanded="true" />
+            <element signature="e#5994#5995#0" expanded="true" />
             <element signature="method#show2D#0;class#MatrixHBC#0" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
+            <element signature="e#6475#6476#0" expanded="true" />
+            <element signature="e#6512#6513#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/VectorP.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="279">
+          <caret line="22" column="98" lean-forward="true" selection-start-line="22" selection-start-column="98" selection-end-line="22" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MatrixC#0;class#MatrixC#0" />
+            <element signature="method#calculateIntegralPoints#0;class#MatrixC#0" />
+            <element signature="method#show2D#0;class#MatrixC#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/FileOperation/DataFromFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="40" column="15" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
+        <state relative-caret-position="1689">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3839#3840#0" expanded="true" />
+            <element signature="e#3942#3943#0" expanded="true" />
+            <element signature="e#3969#3970#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#show2D#0;class#MatrixC#0" />
-            <element signature="e#4162#4163#0" expanded="true" />
-            <element signature="e#4197#4198#0" expanded="true" />
-            <element signature="e#4263#4264#0" expanded="true" />
-            <element signature="e#4311#4312#0" expanded="true" />
-            <element signature="e#4360#4361#0" expanded="true" />
-            <element signature="e#4395#4396#0" expanded="true" />
-            <element signature="e#4461#4462#0" expanded="true" />
-            <element signature="e#4509#4510#0" expanded="true" />
-            <element signature="e#4567#4568#0" expanded="true" />
-            <element signature="e#4611#4612#0" expanded="true" />
-            <element signature="e#4819#4820#0" expanded="true" />
-            <element signature="e#4863#4864#0" expanded="true" />
-            <element signature="e#5059#5060#0" expanded="true" />
-            <element signature="e#5091#5092#0" expanded="true" />
-            <element signature="e#5151#5152#0" expanded="true" />
-            <element signature="e#5193#5194#0" expanded="true" />
-            <element signature="e#5231#5232#0" expanded="true" />
-            <element signature="e#5261#5262#0" expanded="true" />
-            <element signature="e#5311#5312#0" expanded="true" />
-            <element signature="e#5349#5350#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#show1D#0;class#BuilderMatrixH#0" />
-            <element signature="method#show2D#0;class#BuilderMatrixH#0" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
         </state>
       </provider>
     </entry>

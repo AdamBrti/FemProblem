@@ -14,18 +14,10 @@ public class Grid {
         return nodes;
     }
 
-
-    public void setNodes(List<Node> nodes) {
-        this.nodes = nodes;
-    }
-
     public List<Element> getElements() {
         return elements;
     }
 
-    public void setElements(List<Element> elements) {
-        this.elements = elements;
-    }
 
     public void showList() {
 
@@ -57,39 +49,13 @@ public class Grid {
     }
 
 
-    public void generateNodes(DataFromFile dataFromFile) {
-        List<Node> tmpNodes = new ArrayList<>();
-        Integer deltaX = dataFromFile.getL() / (dataFromFile.getnL() - 1);
-        Integer deltaY = dataFromFile.getH() / (dataFromFile.getnH() - 1);
-
-        for (int i = 0; i <= dataFromFile.getL(); i = i + deltaX) {
-
-            for (int j = 0; j <= dataFromFile.getH(); j = j + deltaY) {
-
-                Node tmpNode = new Node();
-                tmpNode.setX(i);
-                tmpNode.setY(j);
-                tmpNode.setT(dataFromFile.getT());
-                tmpNodes.add(tmpNode);
-
-
-            }
-
-        }
-
-        this.nodes = tmpNodes;
-        createElements(this.nodes, dataFromFile.getnH(), dataFromFile.getConductivity(), 1);
-    }
-
     public void generateNodes2(DataFromFile dataFromFile) {
         List<Node> tmpNodes = new ArrayList<>();
         double deltaX = dataFromFile.get_B() / (dataFromFile.getN_B() - 1);
         double deltaY = dataFromFile.get_H() / (dataFromFile.getN_H() - 1);
 
-        int counterOfElements = 0;
         int p = 0;
         for (double i = 0; i <= dataFromFile.get_B(); i = i + deltaX) {
-
             int q = 0;
             for (double j = 0; j <= dataFromFile.get_H(); j = j + deltaY) {
 
@@ -103,14 +69,11 @@ public class Grid {
                 }
                 q++;
             }
-            counterOfElements++;
             p++;
         }
-
         this.nodes = tmpNodes;
         createElements(this.nodes, dataFromFile.getN_H(), dataFromFile.getConductivity(), 1);
     }
-
     public void showNodes(DataFromFile dataFromFile) {
         int i = 0;
         int nodeNumber = 1;
@@ -120,11 +83,9 @@ public class Grid {
             System.out.println(iter + " " + n.isBoarderContition());
             iter++;
         }
-
         for (Node n : this.nodes) {
 
             if (i < dataFromFile.getN_H()) {
-                //System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
                 System.out.print(nodeNumber);
                 System.out.format("( %.3f ", n.getX());
                 System.out.print(", ");
@@ -135,7 +96,6 @@ public class Grid {
             } else {
                 System.out.print("\n\n\n");
                 line++;
-                // System.out.print(nodeNumber + "(" + n.getX() + ", " + n.getY() + ")   ");
                 System.out.print(nodeNumber);
                 System.out.format("( %.3f ", n.getX());
                 System.out.print(", ");
@@ -144,14 +104,12 @@ public class Grid {
                 nodeNumber++;
                 i = 1;
             }
-
         }
+        System.out.println();
     }
 
     public Node getNodeByID(int id) {
-
         return nodes.get(id);
     }
-
 
 }
