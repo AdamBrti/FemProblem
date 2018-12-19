@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711a4822-13f8-48c0-b95d-f80c28739fb4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MetodaEliminacjiGaussa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/Agregation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixH.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixHBC$IntegralPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixHBC$IntegralPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixHBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FEM/Matrix/MatrixHBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Application.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -78,20 +64,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="10">
+              <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetodaEliminacjiGaussa.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Grid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="84" column="11" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+              <folding>
+                <element signature="e#3197#3198#0" expanded="true" />
+                <element signature="e#3233#3234#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetodaEliminacjiGaussa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="177">
               <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixHBC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="23" column="80" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#calcMatrixHBC#0;class#MatrixHBC#0" />
+                <element signature="method#calcPartsSum#0;class#MatrixHBC#0" />
+                <element signature="method#getIteratorForKsi#0;class#MatrixHBC#0" />
+                <element signature="method#getIteratorForEta#0;class#MatrixHBC#0" />
+                <element signature="method#pitagoras#0;class#MatrixHBC#0" />
+                <element signature="class#IntegralPoint#0;class#MatrixHBC#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -434,7 +451,6 @@
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/BuilderMatrixH.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/MatrixHBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/AreaGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/UniversalElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/MatrixC.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/model/VectorP.java" />
@@ -450,6 +466,7 @@
         <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java" />
         <option value="$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixH.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FEM/model/Grid.java" />
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
       </list>
     </option>
@@ -553,15 +570,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../P MES/MesProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -719,7 +736,8 @@
       <workItem from="1544727750940" duration="10899000" />
       <workItem from="1544784275443" duration="1659000" />
       <workItem from="1545150891144" duration="12517000" />
-      <workItem from="1545242411696" duration="9803000" />
+      <workItem from="1545242411696" duration="11097000" />
+      <workItem from="1545256078160" duration="2628000" />
     </task>
     <task id="LOCAL-00001" summary="2nd etap +">
       <created>1541541890026</created>
@@ -749,11 +767,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542216991927</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finish">
+      <created>1545252569860</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545252569860</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182264000" />
+    <option name="totallyTimeSpent" value="186186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -766,7 +791,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
@@ -776,12 +800,12 @@
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5015129" side_tool="true" weight="0.14521453" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.6122112" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.070957094" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.14521453" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" weight="0.32838285" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29727685" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30181542" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="10" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.18532526" />
@@ -790,26 +814,27 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.25577557" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.15346535" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32838285" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32838285" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32838285" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1369637" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.16171618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -817,14 +842,15 @@
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50226927" side_tool="true" weight="0.24257426" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5015129" side_tool="true" weight="0.14521453" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32838285" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.070957094" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.18532526" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30181542" />
       <window_info anchor="right" id="SciView" order="11" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="10" weight="0.32980332" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -833,9 +859,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" visible="true" weight="0.7326733" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.15346535" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -849,17 +873,12 @@
     <MESSAGE value="Before matrix H" />
     <MESSAGE value="Matrix H" />
     <MESSAGE value="Matrix C" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matrix C" />
+    <MESSAGE value="Finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="239" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java</url>
           <line>6</line>
@@ -868,18 +887,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>146</line>
+          <line>29</line>
           <properties />
-          <option name="timeStamp" value="250" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="263" />
+          <option name="timeStamp" value="265" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="264" />
+      <option name="time" value="266" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1172,9 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#218#219#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,46 +1202,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="89" column="55" lean-forward="true" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#422#423#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/Agregation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="190" column="26" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#calcMatrixHBC#0;class#MatrixHBC#0" />
-            <element signature="method#calcPartsSum#0;class#MatrixHBC#0" />
-            <element signature="method#getIteratorForKsi#0;class#MatrixHBC#0" />
-            <element signature="method#getIteratorForEta#0;class#MatrixHBC#0" />
-            <element signature="method#pitagoras#0;class#MatrixHBC#0" />
-            <element signature="class#IntegralPoint#0;class#MatrixHBC#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/Agregation.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/VectorP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1266,9 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1276,26 +1251,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1860">
           <caret line="168" selection-start-line="168" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MatrixHBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="23" column="80" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3839#3840#0" expanded="true" />
-            <element signature="e#3942#3943#0" expanded="true" />
-            <element signature="e#3969#3970#0" expanded="true" />
+            <element signature="method#calcMatrixHBC#0;class#MatrixHBC#0" />
+            <element signature="method#calcPartsSum#0;class#MatrixHBC#0" />
+            <element signature="method#getIteratorForKsi#0;class#MatrixHBC#0" />
+            <element signature="method#getIteratorForEta#0;class#MatrixHBC#0" />
+            <element signature="method#pitagoras#0;class#MatrixHBC#0" />
+            <element signature="class#IntegralPoint#0;class#MatrixHBC#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FEM/model/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="13">
+          <caret line="84" column="11" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+          <folding>
+            <element signature="e#3197#3198#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FEM/Matrix/MetodaEliminacjiGaussa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="177">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
         </state>
       </provider>
     </entry>

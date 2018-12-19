@@ -4,6 +4,8 @@ import FEM.model.Grid;
 import FEM.model.Node;
 import FEM.model.UniversalElement;
 
+import javax.xml.crypto.Data;
+
 public class Application {
 
     public static void main(String[] args) {
@@ -19,13 +21,12 @@ public class Application {
         UniversalElement universalElement = new UniversalElement();
         Grid grid = new Grid();
         grid.generateNodes2(dataFromFile);
+        grid.showNodes(dataFromFile);
         AreaGenerator areaArray = new AreaGenerator();
         areaArray.areaStatusGenerator(grid, dataFromFile);
-        double[] endTemp = new double[16];
-        for (int k = 0; k < 16; k++) {
-            endTemp[k] = 100.0;
-        }
-        for (int l = 0; l < 10; l++) {
+        double[] endTemp;// = new double[16];
+
+        for (double l = 50; l <= dataFromFile.getTau(); l=l+dataFromFile.getDtau()) {
             System.out.println(l + " -=-=-=-=-=-ITERACJA --------**************----------------");
             for (int elementNumber = 0; elementNumber < 9; elementNumber++) {
                 //pobieranie odpowiednich ID Elelmentu
@@ -60,7 +61,7 @@ public class Application {
             // showGlobalArray(globalMatrixH);
             // System.out.println("\n");
 
-            globalVectorPOperation(globalVectorP, globalMatrixC, dataFromFile.getDtau(), endTemp);
+            globalVectorPOperation(globalVectorP, globalMatrixC, dataFromFile.getDtau(), grid);
             globalMatrixH = globalMatrixHCalculation(globalMatrixH, globalMatrixC, dataFromFile.getDtau(), globalmatrixHBC);
 
             //showGlobalArray(globalMatrixH);
@@ -80,7 +81,7 @@ public class Application {
                 }
                 globalVectorP[i] = 0;
             }
-
+            grid.showNodes(dataFromFile);
         }
 
 
@@ -121,29 +122,27 @@ public class Application {
         }
     }
 
-    private static double[] globalVectorPOperation(double[] globalVectorP, double[][] globalMatrixC, double dt, double[] temperatur) {
+    private static double[] globalVectorPOperation(double[] globalVectorP, double[][] globalMatrixC, double dt,  Grid grid) {
         double[][] tmpglobalMatrixC = new double[globalMatrixC.length][globalMatrixC.length];
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 tmpglobalMatrixC[i][j] = globalMatrixC[i][j];
             }
         }
-
         for (int i = 0; i < 16; i++) {
-
+            Node node = grid.getNodes().get(i);
             for (int j = 0; j < 16; j++) {
                 tmpglobalMatrixC[i][j] /= dt;
-                tmpglobalMatrixC[j][i] *= temperatur[i];
+                //tmpglobalMatrixC[j][i] *= temperatur[i];
+                tmpglobalMatrixC[j][i] *= node.getT();
 
             }
         }
-
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 globalVectorP[i] += tmpglobalMatrixC[i][j];
             }
         }
-
         return globalVectorP;
     }
 
@@ -155,6 +154,8 @@ public class Application {
         }
         return matrixH;
     }
+
+
 }
 
 

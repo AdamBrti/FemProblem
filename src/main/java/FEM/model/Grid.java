@@ -79,14 +79,14 @@ public class Grid {
         int nodeNumber = 1;
         int line = 1;
         int iter = 1;
-        for (Node n : this.nodes) {
+       /* for (Node n : this.nodes) {
             System.out.println(iter + " " + n.isBoarderContition());
             iter++;
-        }
+        }*/
         for (Node n : this.nodes) {
 
             if (i < dataFromFile.getN_H()) {
-                System.out.print(nodeNumber);
+                System.out.print(nodeNumber+" || "+n.getT());
                 System.out.format("( %.3f ", n.getX());
                 System.out.print(", ");
                 System.out.format("%.3f ", n.getY());
@@ -96,7 +96,7 @@ public class Grid {
             } else {
                 System.out.print("\n\n\n");
                 line++;
-                System.out.print(nodeNumber);
+                System.out.print(nodeNumber+" || "+n.getT());
                 System.out.format("( %.3f ", n.getX());
                 System.out.print(", ");
                 System.out.format("%.3f ", n.getY());
