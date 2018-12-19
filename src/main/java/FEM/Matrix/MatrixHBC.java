@@ -1,5 +1,6 @@
 package FEM.Matrix;
 
+import FEM.FileOperation.DataFromFile;
 import FEM.model.*;
 
 import java.util.ArrayList;
@@ -17,29 +18,29 @@ public class MatrixHBC {
     public double[] vectorP1;
     public double[] vectorP2;
 
-    public void buildMatrixHBC(UniversalElement universalElement, Grid grid, int number, int[] boarderCondition, int[] localId, int[] globalId, double[] globalArray) {
+    public void buildMatrixHBC(DataFromFile dataFromFile,UniversalElement universalElement, Grid grid, int number, int[] boarderCondition, int[] localId, int[] globalId, double[] globalArray) {
         Integer tabId[] = grid.getElements().get(number).getId();
-        Node[] nodes = {grid.getNodeByID(tabId[0] - 1), grid.getNodeByID(tabId[1] - 1), grid.getNodeByID(tabId[2] - 1), grid.getNodeByID(tabId[3] - 1)};
+        Node[] nodes = {grid.getNodeByID(tabId[0] - 1), grid.getNodeByID(tabId[1] - 1),
+                grid.getNodeByID(tabId[2] - 1), grid.getNodeByID(tabId[3] - 1)};
+
         this.warunekBrzegowy = boarderCondition;
         double dx[] = pitagoras(nodes);
         this.dx = dx;
-        calcWarunkiBrzegowe_2D(universalElement, dx);
+
+        calcPartsSum(universalElement, dx);
         calcMatrixHBC();
-        IntegralPointP integralPointP = new IntegralPointP();
 
         //oblicz wektor P
+        IntegralPointP integralPointP = new IntegralPointP();
         VectorP vectorP = new VectorP();
         for (int i = 0; i < 4; i++) {
             if (boarderCondition[i] == 1) {
-                this.vectorP1 = vectorP.buildVectorP(integralPointP.P1[i], dx[i], 1200, 300);
+                this.vectorP1 = vectorP.buildVectorP(integralPointP.P1[i], dx[i], dataFromFile.getAmbT(), dataFromFile.getAlfa());
                 vectorPToGlobal(localId, globalId,vectorP1, globalArray);
-                this.vectorP2 = vectorP.buildVectorP(integralPointP.P2[i], dx[i], 1200, 300);
+                this.vectorP2 = vectorP.buildVectorP(integralPointP.P2[i], dx[i], dataFromFile.getAmbT(), dataFromFile.getAlfa());
                 vectorPToGlobal(localId, globalId,vectorP2, globalArray);
             }
         }
-
-        //show2D(matrixHBC);
-        //System.out.println();
     }
     private static double[] vectorPToGlobal(int[] localId, int[] globalId, double[] localArray, double[] globalArray) {
         for (int i = 0; i < 4; i++) {
@@ -47,19 +48,9 @@ public class MatrixHBC {
             int globalx = globalId[localx - 1];
 
             globalArray[globalx - 1] += localArray[i];
-
         }
         return globalArray;
     }
-
-    public double[] addVector(double[] vectorA, double[] vectorB) {
-        double tmp[] = new double[4];
-        for (int i = 0; i < 4; i++) {
-            tmp[i] += vectorA[i] + vectorB[i];
-        }
-        return tmp;
-    }
-
 
     public void calcMatrixHBC() {
         matrixHBC = new double[4][4];
@@ -75,7 +66,7 @@ public class MatrixHBC {
 
     }
 
-    public void calcWarunkiBrzegowe_2D(UniversalElement universalElement, double[] dx) {
+    public void calcPartsSum(UniversalElement universalElement, double[] dx) {
         IntegralPoint integralPoints = new IntegralPoint();
         double[] ksiValues = integralPoints.getKsiValueTable();
         double[] etaValues = {-1.0, 1.0, ksiValues[1], ksiValues[0]};
@@ -157,7 +148,6 @@ public class MatrixHBC {
         return dx;
     }
 
-
     private class IntegralPoint {
         private Point[] integralPoints = new Point[4];
         private double ksiValueTable[] = new double[4];
@@ -174,7 +164,6 @@ public class MatrixHBC {
                 etaValueTable[i] = integralPoints[i].getY();
             }
         }
-
         public Point[] getIntegralPoints() {
             return integralPoints;
         }

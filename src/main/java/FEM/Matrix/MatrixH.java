@@ -38,7 +38,7 @@ public class MatrixH {
         calculate_dNdX2DMatrix__dNdY2DMatrix_T_AND_detJ();
         calculate_K_and_Matrixs();
         calculate_Matrix_H();
-        show2D(matrixH);
+
     }
 
     public void buildJacobian(UniversalElement universalElement, Grid grid, int number) {
@@ -66,7 +66,7 @@ public class MatrixH {
 
     public void buildDetJ() {
         double detJ[] = new double[4];
-        System.out.println();
+
         for (int i = 0; i < 4; i++) {
             detJ[i] = jacobian[0][i] * jacobian[3][i] - jacobian[1][i] * jacobian[2][i];
         }

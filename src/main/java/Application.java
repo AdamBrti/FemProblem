@@ -1,6 +1,7 @@
 import FEM.FileOperation.DataFromFile;
 import FEM.Matrix.*;
 import FEM.model.Grid;
+import FEM.model.Node;
 import FEM.model.UniversalElement;
 
 public class Application {
@@ -12,63 +13,83 @@ public class Application {
         double[][] globalmatrixHBC = new double[16][16];
         double[] globalVectorP = new double[16];
 
+        MetodaEliminacjiGaussa metodaEliminacjiGaussa = new MetodaEliminacjiGaussa();
+
         DataFromFile dataFromFile = new DataFromFile();
         UniversalElement universalElement = new UniversalElement();
         Grid grid = new Grid();
         grid.generateNodes2(dataFromFile);
         AreaGenerator areaArray = new AreaGenerator();
         areaArray.areaStatusGenerator(grid, dataFromFile);
+        double[] endTemp = new double[16];
+        for (int k = 0; k < 16; k++) {
+            endTemp[k] = 100.0;
+        }
+        for (int l = 0; l < 10; l++) {
+            System.out.println(l + " -=-=-=-=-=-ITERACJA --------**************----------------");
+            for (int elementNumber = 0; elementNumber < 9; elementNumber++) {
+                //pobieranie odpowiednich ID Elelmentu
+                int[] globalId = new int[4];
+                for (int i = 0; i < 4; i++) {
+                    globalId[i] = grid.getElements().get(elementNumber).getId()[i];
+                }
 
-        for (int elementNumber = 0; elementNumber < 9; elementNumber++) {
-            int[] globalId = new int[4];
-            globalId[0] = grid.getElements().get(elementNumber).getId()[0];
-            globalId[1] = grid.getElements().get(elementNumber).getId()[1];
-            globalId[2] = grid.getElements().get(elementNumber).getId()[2];
-            globalId[3] = grid.getElements().get(elementNumber).getId()[3];
+                //liczy macierz H dla kazdego elementu lokalnie
+                MatrixH matrixH = new MatrixH(dataFromFile);
+                matrixH.buildMatrixH(universalElement, grid, elementNumber);
 
-            System.out.println("Element:  " + elementNumber);
-            //liczy macierz H dla kazdego elementu lokalnie
-            MatrixH matrixH = new MatrixH(dataFromFile);
-            matrixH.buildMatrixH(universalElement, grid, elementNumber);
+                //oblicza matrix C
+                MatrixC matrixC = new MatrixC(dataFromFile, universalElement, matrixH);
+                matrixC.buildMatrixC(universalElement);
 
-            MatrixC matrixC = new MatrixC(dataFromFile, universalElement, matrixH);
-            matrixC.buildMatrixC(universalElement);
+                //liczy druga czesc macierzy H z warunkiem brzegowym lokalnie
+                //wylicza wartosc wektora P - jako atrybut lokalnie
+                MatrixHBC matrixHBC = new MatrixHBC();
+                matrixHBC.buildMatrixHBC(dataFromFile, universalElement, grid, elementNumber, areaArray.getListBoarderConditionForElement().get(elementNumber),
+                        localId, globalId, globalVectorP);
 
-            //liczy druga czesc macierzy H z warunkiem brzegowym lokalnie
-            //wylicza wartosc wektora P - jako atrybut lokalnie
-            MatrixHBC matrixHBC = new MatrixHBC();
-            matrixHBC.buildMatrixHBC(universalElement, grid, elementNumber, areaArray.getListBoarderConditionForElement().get(elementNumber),
-                    localId, globalId, globalVectorP);
+                //przerzut wyliczonych czesci do globala
+                arrayToGlobal(localId, globalId, matrixC.matrixC, globalMatrixC);
+                arrayToGlobal(localId, globalId, matrixH.matrixH, globalMatrixH);
+                arrayToGlobal(localId, globalId, matrixHBC.getMatrixHBC(), globalmatrixHBC);
 
-            //przerzut wyliczonych czesci do globala
-            arrayToGlobal(localId, globalId, matrixC.matrixC, globalMatrixC);
-            arrayToGlobal(localId, globalId, matrixH.matrixH, globalMatrixH);
-            arrayToGlobal(localId, globalId, matrixHBC.getMatrixHBC(), globalmatrixHBC);
+            }
+            // System.out.println();
+            // showGlobalArray(globalMatrixC);
+            // System.out.println("\n");
+            // showGlobalArray(globalMatrixH);
+            // System.out.println("\n");
 
-            System.out.println();
+            globalVectorPOperation(globalVectorP, globalMatrixC, dataFromFile.getDtau(), endTemp);
+            globalMatrixH = globalMatrixHCalculation(globalMatrixH, globalMatrixC, dataFromFile.getDtau(), globalmatrixHBC);
+
+            //showGlobalArray(globalMatrixH);
+            // System.out.println("\n");
+            // showGlobalArrayVectorP(globalVectorP);
+            //System.out.println();
+
+            endTemp = metodaEliminacjiGaussa.gaussElimination(grid.getNodes().size(), globalMatrixH, globalVectorP);
+            for (int i = 0; i < 16; i++) {
+                grid.getNodes().get(i).setT(endTemp[i]);
+                System.out.println(endTemp[i]);
+                for (int j = 0; j < 16; j++) {
+                    globalMatrixH[i][j] = 0;
+                    globalMatrixC[i][j] = 0;
+                    globalmatrixHBC[i][j] = 0;
+
+                }
+                globalVectorP[i] = 0;
+            }
 
         }
-        System.out.println();
-        showGlobalArray(globalMatrixC);
-        System.out.println("\n");
-        showGlobalArray(globalMatrixH);
-        System.out.println("\n");
-        showGlobalArray(globalmatrixHBC);
-        System.out.println("\n");
 
-        globalVectorPOperation(globalVectorP, globalMatrixC, dataFromFile.getDtau(), dataFromFile.getTemperatur());
-        showGlobalArray(globalMatrixC);
-        System.out.println("\n");
-        globalMatrixH = globalMatrixHCalculation(globalMatrixH, globalMatrixC, 50, globalmatrixHBC);
 
-        showGlobalArray(globalMatrixH);
-        System.out.println();
     }
 
     private static void showGlobalArray(double[][] globalArray) {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                System.out.print(globalArray[i][j] + " ");
+                System.out.format("%.4f  ", globalArray[i][j]);
             }
             System.out.println("");
         }
@@ -89,7 +110,18 @@ public class Application {
         return globalArray;
     }
 
-    private static double[] globalVectorPOperation(double[] globalVectorP, double[][] globalMatrixC, double dt, double t0) {
+    private static void showGlobalArrayVectorP(double[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 0) {
+                System.out.format("%.0f  ", array[i]);
+            } else {
+                System.out.format("%.4f  ", array[i]);
+            }
+
+        }
+    }
+
+    private static double[] globalVectorPOperation(double[] globalVectorP, double[][] globalMatrixC, double dt, double[] temperatur) {
         double[][] tmpglobalMatrixC = new double[globalMatrixC.length][globalMatrixC.length];
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
@@ -98,19 +130,21 @@ public class Application {
         }
 
         for (int i = 0; i < 16; i++) {
+
             for (int j = 0; j < 16; j++) {
                 tmpglobalMatrixC[i][j] /= dt;
-                tmpglobalMatrixC[i][j] *= t0;
-            }
-        }
-        double[] returnArray = new double[16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                returnArray[i] += tmpglobalMatrixC[i][j] * globalVectorP[i];
+                tmpglobalMatrixC[j][i] *= temperatur[i];
+
             }
         }
 
-        return returnArray;
+        for (int i = 0; i < 16; i++) {
+            for (int j = 0; j < 16; j++) {
+                globalVectorP[i] += tmpglobalMatrixC[i][j];
+            }
+        }
+
+        return globalVectorP;
     }
 
     private static double[][] globalMatrixHCalculation(double[][] matrixH, double[][] matrixC, double dt, double[][] matrixHBC2D) {
